@@ -6679,8 +6679,8 @@ if __name__ == "__main__":
                   help="Don't reload daemon after en-/dis-abling unit files")
     _o.add_option("--no-ask-password", action="store_true", default=_no_ask_password,
                   help="Do not ask for system passwords")
-    # _o.add_option("--global", action="store_true", dest="globally", default=_globally,
-    #    help="Enable/disable unit files globally") # for all user logins
+    _o.add_option("--global", action="store_true", dest="globally", default=True,
+                  help="Enable/disable unit files globally (fake)")
     # _o.add_option("--runtime", action="store_true",
     #     help="Enable unit files only temporarily until next reboot")
     _o.add_option("-f", "--force", action="store_true", default=_force,
@@ -6735,6 +6735,10 @@ if __name__ == "__main__":
     _pid = os.getpid()
     _init = opt.init or _pid in [1, 0]
     _user_mode = opt.user
+    #
+    if opt.globally:
+        sys.exit(0)
+    #
     if os.geteuid() and _pid in [1, 0]:
         _user_mode = True
     if opt.system:

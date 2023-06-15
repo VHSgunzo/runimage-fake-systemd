@@ -1,7 +1,7 @@
 # Maintainer: VHSgunzo <vhsgunzo.github.io>
 
 pkgname='fake-systemd'
-pkgver='0.2'
+pkgver='0.3'
 pkgrel='1'
 pkgbase="$pkgname"
 pkgdesc='Fake systemd for RunImage container'

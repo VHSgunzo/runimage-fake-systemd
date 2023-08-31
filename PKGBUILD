@@ -2,14 +2,14 @@
 
 pkgname='fake-systemd'
 pkgver='0.5'
-pkgrel='1'
+pkgrel='2'
 pkgbase="$pkgname"
 pkgdesc='Fake systemd for RunImage container'
 url="https://github.com/VHSgunzo/runimage-fake-systemd"
 arch=('any')
 license=('MIT')
 depends=('python')
-provides=('systemd' 'systemd-sysvcompat' 'udev' 'nss-myhostname' 'systemd-tools')
+provides=('systemd=254.1' 'systemd-tools=254.1' 'udev=254.1' 'systemd-sysvcompat' 'nss-myhostname')
 conflicts=(${provides[@]} 'systemd-git')
 source=('systemctl' 'journalctl')
 sha256sums=('SKIP' 'SKIP')

@@ -1,0 +1,8 @@
+#!/usr/bin/bash
+while IFS=$'\n' read -r unit
+    do
+        sed -i '/^User/d;/^Group/d' "/$unit"
+        if grep -qo '^WorkingDirectory' "/$unit"
+            then mkdir -p "$(grep -m1 '^WorkingDirectory' "/$unit"|sed -E 's|.*=( )?|/|')"
+        fi
+done

@@ -1,14 +1,14 @@
 # Maintainer: VHSgunzo <vhsgunzo.github.io>
 
 pkgname='fake-systemd'
-pkgver='0.9'
+pkgver='0.10'
 pkgrel='1'
 pkgdesc='Fake systemd for RunImage container'
 url="https://github.com/VHSgunzo/runimage-fake-systemd"
 arch=('any')
 license=('MIT')
 depends=('python')
-provides=('systemd=257.2' 'systemd-tools=257.2' 'udev=257.2' 'systemd-sysvcompat' 'nss-myhostname')
+provides=('systemd=257.4' 'systemd-tools=257.4' 'udev=257.4' 'systemd-sysvcompat' 'nss-myhostname')
 conflicts=(${provides[@]} 'systemd-git')
 source=(
   'systemctl::https://raw.githubusercontent.com/gdraheim/docker-systemctl-replacement/refs/heads/master/files/docker/systemctl3.py'

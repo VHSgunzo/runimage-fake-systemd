@@ -8,5 +8,5 @@ git clone https://github.com/VHSgunzo/runimage-fake-systemd.git
 ```
 * **Build**
 ```
-cd runimage-fake-systemd && ./build.sh
+cd runimage-fake-systemd && makepkg -fsCc --noconfirm --nodeps
 ```
